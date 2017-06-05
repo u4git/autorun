@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autorun>
+
+	<!-- Hosts -->
+	<hosts>
+
+		<host id="251">
+			<hostname>172.16.80.251</hostname>
+			<port>22</port>
+			<username>root</username>
+			<password>123456</password>
+			<system>
+				<class>org.wangli.tools.autorun.system.impl.Linux</class>
+			</system>
+			<waitTime-afterReboot>30</waitTime-afterReboot>  <!-- 重启后等待时间，单位：秒 -->
+		</host>
+
+		<host id="252">
+			<hostname>172.16.80.252</hostname>
+			<port>22</port>
+			<username>root</username>
+			<password>123456</password>
+			<system>
+				<class>org.wangli.tools.autorun.system.impl.Linux</class>
+			</system>
+			<waitTime-afterReboot>30</waitTime-afterReboot>  <!-- 重启后等待时间，单位：秒 -->
+		</host>
+
+		<host id="253">
+			<hostname>172.16.80.253</hostname>
+			<port>22</port>
+			<username>root</username>
+			<password>123456</password>
+			<system>
+				<class>org.wangli.tools.autorun.system.impl.Linux</class>
+			</system>
+			<waitTime-afterReboot>30</waitTime-afterReboot>  <!-- 重启后等待时间，单位：秒 -->
+		</host>
+
+	</hosts>
+
+	<!-- Operations -->
+	<operations>
+
+		<operation id="start_cluster">
+			<host-ids>
+				<host-id>251</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/cluster/start_cluster.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+			<wait-after>30</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+		<operation id="stop_cluster">
+			<host-ids>
+				<host-id>251</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/cluster/stop_cluster.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+			<wait-after>0</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+		<operation id="set_params">
+			<host-ids>
+				<host-id>251</host-id>
+				<host-id>252</host-id>
+				<host-id>253</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/parameters/set_params.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>true</reboot-after>
+			<wait-after>0</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+		<operation id="chk_params">
+			<host-ids>
+				<host-id>251</host-id>
+				<host-id>252</host-id>
+				<host-id>253</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/parameters/chk_params.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+			<wait-after>0</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+		<operation id="start_ftrace">
+			<host-ids>
+				<host-id>252</host-id>
+				<host-id>253</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/trace/ftrace/start_ftrace.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+			<wait-after>0</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+		<operation id="stop_ftrace">
+			<host-ids>
+				<host-id>252</host-id>
+				<host-id>253</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/trace/ftrace/stop_ftrace.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+			<wait-after>0</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+		<operation id="set_metrics">
+			<host-ids>
+				<host-id>252</host-id>
+				<host-id>253</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/trace/spark_metrics/set_metrics.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+			<wait-after>0</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+		<operation id="start_pagewalk">
+			<host-ids>
+				<host-id>252</host-id>
+				<host-id>253</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/trace/pagewalk/start_pagewalk.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+			<wait-after>0</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+		<operation id="stop_pagewalk">
+			<host-ids>
+				<host-id>252</host-id>
+				<host-id>253</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/trace/pagewalk/stop_pagewalk.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+			<wait-after>0</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+		<operation id="save_smtt">
+			<host-ids>
+				<host-id>252</host-id>
+				<host-id>253</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/trace/smtt/save_smtt.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+			<wait-after>0</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+		<operation id="start_meminfo">
+			<host-ids>
+				<host-id>252</host-id>
+				<host-id>253</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/trace/meminfo/start_meminfo.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+			<wait-after>0</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+		<operation id="stop_meminfo">
+			<host-ids>
+				<host-id>252</host-id>
+				<host-id>253</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/trace/meminfo/stop_meminfo.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+			<wait-after>0</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+		<operation id="run_pr">
+			<host-ids>
+				<host-id>251</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/sparkbench/run_pr.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+			<wait-after>0</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+		<operation id="run_lr">
+			<host-ids>
+				<host-id>251</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/sparkbench/run_lr.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+			<wait-after>0</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+		<operation id="run_svm">
+			<host-ids>
+				<host-id>251</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/sparkbench/run_svm.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+			<wait-after>0</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+		<operation id="run_mf">
+			<host-ids>
+				<host-id>251</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/sparkbench/run_mf.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+			<wait-after>0</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+		<operation id="run_svdpp">
+			<host-ids>
+				<host-id>251</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/sparkbench/run_svdpp.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+			<wait-after>0</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+		<operation id="run_tc">
+			<host-ids>
+				<host-id>251</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/sparkbench/run_tc.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+			<wait-after>0</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+		<operation id="run_test">
+			<host-ids>
+				<host-id>251</host-id>
+			</host-ids>
+			<command>/root/experiment/scripts/sparkbench/run_test.sh</command>
+			<exec-num>1</exec-num>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+			<wait-after>0</wait-after>  <!-- 操作后等待时间，单位：秒 -->
+		</operation>
+
+	</operations>
+
+	<!-- Executions -->
+	<executions>
+
+		<!-- lr pagewalk -->
+
+		<execution id="lr_pagewalk_thp=always_hps=2m_numa=on_numabala=1">
+			<operations>
+				<operation isParallel="false">
+					<id>set_params</id>
+					<parameters>always 2m on 1</parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>chk_params</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>start_cluster</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>run_lr</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>stop_cluster</id>
+					<parameters></parameters>
+				</operation>
+			</operations>
+			<exec-num>1</exec-num>
+			<time-dir-start>1</time-dir-start>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+		</execution>
+
+		<execution id="lr_pagewalk_thp=never_hps=2m_numa=on_numabala=1">
+			<operations>
+				<operation isParallel="false">
+					<id>set_params</id>
+					<parameters>never 2m on 1</parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>chk_params</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>start_cluster</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>run_lr</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>stop_cluster</id>
+					<parameters></parameters>
+				</operation>
+			</operations>
+			<exec-num>1</exec-num>
+			<time-dir-start>1</time-dir-start>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+		</execution>
+
+		<execution id="lr_pagewalk_thp=always_hps=1g_numa=on_numabala=1">
+			<operations>
+				<operation isParallel="false">
+					<id>set_params</id>
+					<parameters>always 1g on 1</parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>chk_params</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>start_cluster</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>run_lr</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>stop_cluster</id>
+					<parameters></parameters>
+				</operation>
+			</operations>
+			<exec-num>1</exec-num>
+			<time-dir-start>1</time-dir-start>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+		</execution>
+
+		<!-- mf pagewalk -->
+
+		<execution id="mf_pagewalk_thp=always_hps=2m_numa=on_numabala=1">
+			<operations>
+				<operation isParallel="false">
+					<id>set_params</id>
+					<parameters>always 2m on 1</parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>chk_params</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>start_cluster</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>run_mf</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>stop_cluster</id>
+					<parameters></parameters>
+				</operation>
+			</operations>
+			<exec-num>1</exec-num>
+			<time-dir-start>1</time-dir-start>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+		</execution>
+
+		<execution id="mf_pagewalk_thp=never_hps=2m_numa=on_numabala=1">
+			<operations>
+				<operation isParallel="false">
+					<id>set_params</id>
+					<parameters>never 2m on 1</parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>chk_params</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>start_cluster</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>run_mf</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>stop_cluster</id>
+					<parameters></parameters>
+				</operation>
+			</operations>
+			<exec-num>1</exec-num>
+			<time-dir-start>1</time-dir-start>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+		</execution>
+
+		<execution id="mf_pagewalk_thp=always_hps=1g_numa=on_numabala=1">
+			<operations>
+				<operation isParallel="false">
+					<id>set_params</id>
+					<parameters>always 1g on 1</parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>chk_params</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>start_cluster</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>run_mf</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>stop_cluster</id>
+					<parameters></parameters>
+				</operation>
+			</operations>
+			<exec-num>1</exec-num>
+			<time-dir-start>1</time-dir-start>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+		</execution>
+
+		<!-- pr pagewalk -->
+
+		<execution id="pr_pagewalk_thp=always_hps=2m_numa=on_numabala=1">
+			<operations>
+				<operation isParallel="false">
+					<id>set_params</id>
+					<parameters>always 2m on 1</parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>chk_params</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>start_cluster</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>run_pr</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>stop_cluster</id>
+					<parameters></parameters>
+				</operation>
+			</operations>
+			<exec-num>1</exec-num>
+			<time-dir-start>1</time-dir-start>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+		</execution>
+
+		<execution id="pr_pagewalk_thp=never_hps=2m_numa=on_numabala=1">
+			<operations>
+				<operation isParallel="false">
+					<id>set_params</id>
+					<parameters>never 2m on 1</parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>chk_params</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>start_cluster</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>run_pr</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>stop_cluster</id>
+					<parameters></parameters>
+				</operation>
+			</operations>
+			<exec-num>1</exec-num>
+			<time-dir-start>1</time-dir-start>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+		</execution>
+
+		<execution id="pr_pagewalk_thp=always_hps=1g_numa=on_numabala=1">
+			<operations>
+				<operation isParallel="false">
+					<id>set_params</id>
+					<parameters>always 1g on 1</parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>chk_params</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>start_cluster</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>run_pr</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>stop_cluster</id>
+					<parameters></parameters>
+				</operation>
+			</operations>
+			<exec-num>1</exec-num>
+			<time-dir-start>1</time-dir-start>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+		</execution>
+
+		<!-- svm pagewalk -->
+
+		<execution id="svm_pagewalk_thp=always_hps=2m_numa=on_numabala=1">
+			<operations>
+				<operation isParallel="false">
+					<id>set_params</id>
+					<parameters>always 2m on 1</parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>chk_params</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>start_cluster</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>run_svm</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>stop_cluster</id>
+					<parameters></parameters>
+				</operation>
+			</operations>
+			<exec-num>1</exec-num>
+			<time-dir-start>1</time-dir-start>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+		</execution>
+
+		<execution id="svm_pagewalk_thp=never_hps=2m_numa=on_numabala=1">
+			<operations>
+				<operation isParallel="false">
+					<id>set_params</id>
+					<parameters>never 2m on 1</parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>chk_params</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>start_cluster</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>run_svm</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>stop_cluster</id>
+					<parameters></parameters>
+				</operation>
+			</operations>
+			<exec-num>1</exec-num>
+			<time-dir-start>1</time-dir-start>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+		</execution>
+
+		<execution id="svm_pagewalk_thp=always_hps=1g_numa=on_numabala=1">
+			<operations>
+				<operation isParallel="false">
+					<id>set_params</id>
+					<parameters>always 1g on 1</parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>chk_params</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>start_cluster</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>run_svm</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>stop_cluster</id>
+					<parameters></parameters>
+				</operation>
+			</operations>
+			<exec-num>1</exec-num>
+			<time-dir-start>1</time-dir-start>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+		</execution>
+
+		<!-- tc pagewalk -->
+
+		<execution id="tc_pagewalk_thp=always_hps=2m_numa=on_numabala=1">
+			<operations>
+				<operation isParallel="false">
+					<id>set_params</id>
+					<parameters>always 2m on 1</parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>chk_params</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>start_cluster</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>run_tc</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>stop_cluster</id>
+					<parameters></parameters>
+				</operation>
+			</operations>
+			<exec-num>1</exec-num>
+			<time-dir-start>1</time-dir-start>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+		</execution>
+
+		<execution id="tc_pagewalk_thp=never_hps=2m_numa=on_numabala=1">
+			<operations>
+				<operation isParallel="false">
+					<id>set_params</id>
+					<parameters>never 2m on 1</parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>chk_params</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>start_cluster</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>run_tc</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>stop_cluster</id>
+					<parameters></parameters>
+				</operation>
+			</operations>
+			<exec-num>1</exec-num>
+			<time-dir-start>1</time-dir-start>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+		</execution>
+
+		<execution id="tc_pagewalk_thp=always_hps=1g_numa=on_numabala=1">
+			<operations>
+				<operation isParallel="false">
+					<id>set_params</id>
+					<parameters>always 1g on 1</parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>chk_params</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>start_cluster</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>run_tc</id>
+					<parameters></parameters>
+				</operation>
+				<operation isParallel="false">
+					<id>stop_cluster</id>
+					<parameters></parameters>
+				</operation>
+			</operations>
+			<exec-num>1</exec-num>
+			<time-dir-start>1</time-dir-start>
+			<reboot-before>false</reboot-before>
+			<reboot-after>false</reboot-after>
+		</execution>
+
+	</executions>
+
+	<!-- System -->
+
+	<system>
+		<sys-class>org.wangli.tools.autorun.system.impl.Windows</sys-class>
+		<error-regexs isEnabled="true">
+			<error-regex>\s*Exception in thread\s+\"\s*[a-zA-Z0-9]+\s*\"\s+.*</error-regex>
+			<error-regex>\s+at\s+[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)+.*</error-regex>
+			<error-regex>.*worker lost.*</error-regex>
+		</error-regexs>
+	</system>
+
+</autorun>

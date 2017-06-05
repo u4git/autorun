@@ -1,0 +1,5 @@
+/root/experiment/scripts/trace/ftrace/stop_ftrace.sh ftrace_1 tc_ftrace_thp=always_hps=1g_numa=on_numabala=1
+============================================================
+function_profile_enabled: 1 --> 0
+options/graph-time: 1 --> 0
+options/sleep-time: 0 --> 0

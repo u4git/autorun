@@ -1,0 +1,12 @@
+/root/experiment/scripts/cluster/stop_cluster.sh 
+============================================================
+slave2: stopping org.apache.spark.deploy.worker.Worker
+slave1: stopping org.apache.spark.deploy.worker.Worker
+stopping org.apache.spark.deploy.master.Master
+Stopping namenodes on [master]
+master: stopping namenode
+slave2: stopping datanode
+slave1: stopping datanode
+Stopping secondary namenodes [master]
+master: stopping secondarynamenode
+5234 Jps

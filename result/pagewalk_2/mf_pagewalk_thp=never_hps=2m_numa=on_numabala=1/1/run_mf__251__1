@@ -1,0 +1,98 @@
+/root/experiment/scripts/sparkbench/run_mf.sh 
+============================================================
+========== running MF benchmark ==========
+Master:
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+sudo: sorry, you must have a tty to run sudo
+data purged on slave1 slave2
+sh -c  /usr/local/bin/spark-2.1.0-bin-hadoop2.7/bin/spark-submit --class MatrixFactorization.src.main.java.MFApp --master spark://master:7077   --conf spark.rpc.askTimeout=500 --conf spark.serializer=org.apache.spark.serializer.KryoSerializer --conf spark.rdd.compress=false --conf spark.io.compression.codec=lzf  /root/experiment/benches/spark-bench/MatrixFactorization/target/MFApp-1.0.jar  hdfs://master:9000/SparkBench/MF/Input hdfs://master:9000/SparkBench/MF/Output 700 3 0.01 MEMORY_AND_DISK 2>&1|tee /root/experiment/benches/spark-bench/bin/..//num/MF_run_2017-05-27-01:31:18.dat
+17/05/27 01:31:20 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/05/27 01:31:24 INFO FileInputFormat: Total input paths to process : 10
+
+[Stage 0:>                                                        (0 + 10) / 10]
+[Stage 1:>                                                         (0 + 0) / 10]
+[Stage 1:>                                                        (0 + 10) / 10]
+[Stage 1:=======================>                                  (4 + 6) / 10]
+[Stage 2:>                                                          (0 + 5) / 5]
+                                                                                
+
+[Stage 11:>                                                         (0 + 5) / 5]
+[Stage 11:>                                                         (0 + 5) / 5]
+[Stage 11:>                                                         (0 + 5) / 5]
+[Stage 11:>                                                         (0 + 5) / 5]
+[Stage 11:===========>                                              (1 + 4) / 5]
+[Stage 11:=======================>                                  (2 + 3) / 5]
+[Stage 11:==================================>                       (3 + 2) / 5]
+[Stage 11:==============================================>           (4 + 1) / 5]
+[Stage 12:>                                                         (0 + 5) / 5]
+[Stage 12:>                                                         (0 + 5) / 5]
+[Stage 12:>                                                         (0 + 5) / 5]
+[Stage 12:>                                                         (0 + 5) / 5]
+[Stage 12:===========>                                              (1 + 4) / 5]
+[Stage 12:=======================>                                  (2 + 3) / 5]
+[Stage 12:==============================================>           (4 + 1) / 5]
+[Stage 13:>                                                         (0 + 5) / 5]
+[Stage 13:>                                                         (0 + 5) / 5]
+[Stage 13:>                                                         (0 + 5) / 5]
+[Stage 13:>                                                         (0 + 5) / 5]
+[Stage 13:===========>                                              (1 + 4) / 5]
+[Stage 13:=======================>                                  (2 + 3) / 5]
+[Stage 13:==================================>                       (3 + 2) / 5]
+[Stage 13:==============================================>           (4 + 1) / 5]
+[Stage 14:>                                                         (0 + 5) / 5]
+[Stage 14:>                                                         (0 + 5) / 5]
+[Stage 14:>                                                         (0 + 5) / 5]
+[Stage 14:>                                                         (0 + 5) / 5]
+[Stage 14:===========>                                              (1 + 4) / 5]
+[Stage 14:=======================>                                  (2 + 3) / 5]
+[Stage 14:==================================>                       (3 + 2) / 5]
+[Stage 14:==============================================>           (4 + 1) / 5]
+[Stage 15:>                                                         (0 + 5) / 5]
+[Stage 15:>                                                         (0 + 5) / 5]
+[Stage 15:>                                                         (0 + 5) / 5]
+[Stage 15:>                                                         (0 + 5) / 5]
+[Stage 15:===========>                                              (1 + 4) / 5]
+[Stage 15:=======================>                                  (2 + 3) / 5]
+[Stage 15:==================================>                       (3 + 2) / 5]
+[Stage 15:==============================================>           (4 + 1) / 5]
+[Stage 16:>                                                         (0 + 5) / 5]
+[Stage 16:>                                                         (0 + 5) / 5]
+[Stage 16:>                                                         (0 + 5) / 5]
+[Stage 16:>                                                         (0 + 5) / 5]
+[Stage 16:===========>                                              (1 + 4) / 5]
+[Stage 16:=======================>                                  (2 + 3) / 5]
+[Stage 16:==================================>                       (3 + 2) / 5]
+[Stage 16:==============================================>           (4 + 1) / 5]
+                                                                                
+
+[Stage 26:>                                                         (0 + 5) / 5]
+[Stage 26:>                                                         (0 + 5) / 5]
+[Stage 26:>                                                         (0 + 5) / 5]
+[Stage 26:>                                                         (0 + 5) / 5]
+[Stage 26:===========>                                              (1 + 4) / 5]
+[Stage 26:=======================>                                  (2 + 3) / 5]
+[Stage 26:==================================>                       (3 + 2) / 5]
+[Stage 26:==============================================>           (4 + 1) / 5]
+                                                                                
+
+[Stage 48:>                                                       (0 + 10) / 10]
+[Stage 48:======================>                                  (4 + 6) / 10]
+                                                                                
+
+[Stage 49:>               (0 + 10) / 10][Stage 52:>                (0 + 6) / 10]
+[Stage 49:>               (0 + 10) / 10][Stage 52:==========>      (6 + 4) / 10]
+[Stage 49:=>               (1 + 9) / 10][Stage 52:==========>      (6 + 4) / 10]
+[Stage 61:>                                                         (0 + 5) / 5]
+[Stage 61:=======================>                                  (2 + 3) / 5]
+[Stage 61:==============================================>           (4 + 1) / 5]
+[Stage 62:>                                                         (0 + 5) / 5]
+[Stage 62:==================================>                       (3 + 2) / 5]
+[Stage 63:>                                                       (0 + 10) / 10]
+                                                                                
+{"loadTime":1.454,"trainingTime":1386.189,"testTime":45.221}
+Mean Squared Error = 0.07566073710557748
+
+real	24m5.657s
+user	0m42.974s
+sys	0m3.629s

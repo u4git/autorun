@@ -1,0 +1,8 @@
+/root/experiment/scripts/trace/ftrace/start_ftrace.sh 1 1 0
+============================================================
+function_profile_enabled: 0 --> 0
+options/graph-time: 1 --> 0
+options/sleep-time: 1 --> 0
+function_profile_enabled: 0 --> 1
+options/graph-time: 0 --> 1
+options/sleep-time: 0 --> 0

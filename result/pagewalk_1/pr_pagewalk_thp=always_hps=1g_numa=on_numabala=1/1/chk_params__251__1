@@ -1,0 +1,18 @@
+/root/experiment/scripts/parameters/chk_params.sh 
+============================================================
+===== Check thp. =====
+
+[always] madvise never
+
+===== Check huge page size. =====
+
+Hugepagesize: 1048576 kB
+
+===== Check numa. =====
+
+node0 node1 numa_hit 298747 353792 numa_miss 0 0 numa_foreign 0 0 interleave_hit 16274 16281 local_node 297430 337132 other_node 1317 16660
+
+===== Check numa balancing. =====
+
+kernel.numa_balancing = 1 kernel.numa_balancing_scan_delay_ms = 1000 kernel.numa_balancing_scan_period_max_ms = 60000 kernel.numa_balancing_scan_period_min_ms = 1000 kernel.numa_balancing_scan_size_mb = 256 kernel.numa_balancing_settle_count = 4
+

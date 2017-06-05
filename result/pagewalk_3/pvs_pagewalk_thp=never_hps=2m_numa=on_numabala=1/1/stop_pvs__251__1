@@ -1,0 +1,10 @@
+/root/experiment/scripts/sparkbench/stop_pvs.sh 
+============================================================
+4404 4406
+3154 NameNode
+3298 DataNode
+4404 -- process information unavailable
+4406 -- process information unavailable
+6376 Jps
+3756 Master
+3550 SecondaryNameNode

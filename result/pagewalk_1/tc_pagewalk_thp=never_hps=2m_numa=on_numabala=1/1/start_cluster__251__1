@@ -1,0 +1,15 @@
+/root/experiment/scripts/cluster/start_cluster.sh 
+============================================================
+Starting namenodes on [master]
+master: starting namenode, logging to /usr/local/bin/hadoop-2.7.3/logs/hadoop-root-namenode-host251.out
+slave2: starting datanode, logging to /usr/local/bin/hadoop-2.7.3/logs/hadoop-root-datanode-host253.out
+slave1: starting datanode, logging to /usr/local/bin/hadoop-2.7.3/logs/hadoop-root-datanode-host252.out
+Starting secondary namenodes [master]
+master: starting secondarynamenode, logging to /usr/local/bin/hadoop-2.7.3/logs/hadoop-root-secondarynamenode-host251.out
+starting org.apache.spark.deploy.master.Master, logging to /usr/local/bin/spark-2.1.0-bin-hadoop2.7/logs/spark-root-org.apache.spark.deploy.master.Master-1-host251.out
+slave1: starting org.apache.spark.deploy.worker.Worker, logging to /usr/local/bin/spark-2.1.0-bin-hadoop2.7/logs/spark-root-org.apache.spark.deploy.worker.Worker-1-host252.out
+slave2: starting org.apache.spark.deploy.worker.Worker, logging to /usr/local/bin/spark-2.1.0-bin-hadoop2.7/logs/spark-root-org.apache.spark.deploy.worker.Worker-1-host253.out
+3745 Jps
+3154 NameNode
+3410 SecondaryNameNode
+3610 Master

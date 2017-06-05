@@ -1,0 +1,10 @@
+/root/experiment/scripts/sparkbench/stop_pvs.sh 
+============================================================
+4469 4470
+3813 Master
+4469 -- process information unavailable
+4470 -- process information unavailable
+3223 NameNode
+3387 DataNode
+6475 Jps
+3614 SecondaryNameNode
